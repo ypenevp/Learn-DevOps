@@ -1,1 +1,6 @@
-Here will be added usefull git commands:
+# Usefull git commands
+
+---
+
+## Basics:
+- git add <path to file/folder>
