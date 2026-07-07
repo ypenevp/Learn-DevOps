@@ -504,7 +504,7 @@ https://github.com
 
 [LICENSE](LICENSE)
 
-[Commands reference](COMМANDS.md)
+[Commands reference](COMMANDS.md)
 
 ---
 
