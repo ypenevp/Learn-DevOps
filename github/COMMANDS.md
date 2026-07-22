@@ -139,7 +139,6 @@ Commands for preparing the next commit.
 
 
 ---
-
 # 5. Commits
 
 Commands related to snapshots.
@@ -148,10 +147,49 @@ Commands related to snapshots.
 |----------|-------------|
 | `git commit -m "message"` | Create a commit. |
 | `git commit --amend` | Modify the last commit. |
-| `git commit --amend --no-edit` | Amend without changing the message. |
+| `git commit --amend --no-edit` | Amend the last commit without changing its message. |
 
 > [!IMPORTANT]
-> Every commit represents a snapshot of the project.
+> Every commit represents a snapshot of the project at a specific point in time.
+
+> [!TIP]
+> To change the message of the **last commit**, run:
+>
+> ```bash
+> git commit --amend -m "New commit message"
+> ```
+
+> [!TIP]
+> To rename an **older commit**, use an interactive rebase.
+>
+> You can specify the commits to include in one of two ways:
+>
+> ```bash
+> git rebase -i HEAD~N
+> ```
+>
+> where `N` is the number of commits to include in the rebase.
+>
+> Or, rebase starting from the parent of a specific commit:
+>
+> ```bash
+> git rebase -i <commit-hash>^
+> ```
+>
+> This method is often more convenient because you don't need to count commits.
+>
+> After the interactive rebase starts:
+>
+> 1. Replace `pick` with `reword` (or `r`) for the commit you want to rename.
+> 2. Save and close the editor (`:wq` – see the [Vim Reference](../Linux/VIM.md)).
+> 3. Edit the commit message.
+> 4. Save and close the editor again (`:wq`).
+>
+> If the commits have already been pushed to the remote repository, update the remote history with:
+>
+> ```bash
+> git push --force-with-lease
+> ```
 
 ---
 
