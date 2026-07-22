@@ -77,6 +77,9 @@ Commands and shortcuts for efficient terminal usage.
 | `echo "$?"` | Prints the exit status of the last command. |
 | `echo "$$"` | Prints the current shell process ID (PID). |
 
+> [!NOTE]
+> Use `<command> >> <file>` to push output of the command in the end of the file.
+
 ---
 
 # 3. File System Navigation
